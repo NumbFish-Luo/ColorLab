@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Main.c" />
+    <ClCompile Include="src\Color.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LinearInterpolation.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Bresenham.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Base.c">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="inc">
+      <UniqueIdentifier>{a6952f0c-abc6-4ead-8e59-9d0f570df39f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{912f6762-f87b-49eb-abfd-18b49d0ac764}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="inc\svpng.inc">
+      <Filter>inc</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="inc\Color.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Canvas.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\LinearInterpolation.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Base.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Bresenham.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\DrawLine.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
