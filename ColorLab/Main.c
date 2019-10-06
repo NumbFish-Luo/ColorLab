@@ -7,7 +7,7 @@
 
 #define W 8 // 宽
 #define H 8 // 高
-#define D 3 // 深度, 3 = RGB, 4 = RGBA
+#define D 4 // 深度, 3 = RGB, 4 = RGBA
 
 Canvas_DEF(W, H, D);  DrawLine_DEF(Canvas(W, H, D));  // 定义模板
 Canvas_IMPL(W, H, D); DrawLine_IMPL(Canvas(W, H, D)); // 实现模板
@@ -15,13 +15,23 @@ Canvas_IMPL(W, H, D); DrawLine_IMPL(Canvas(W, H, D)); // 实现模板
 int main(void) {
     // 定义画布, 起点坐标p0, 终点坐标p1; 起点颜色c0, 终点颜色c1
     Canvas(W, H, D) canvas;
-    Point p0, p1;
-    Color c0, c1;
+    Point p0, p1, p;
+    Color c0, c1, c;
+    SizeType i, j;
 
     // 初始化画布和颜色
     Canvas(W, H, D, _Init) (&canvas);
     Color_Init(&c0);
     Color_Init(&c1);
+    Color_Init(&c);
+
+    c.ops->SetRGBA(&c, 0, 0, 0, 0);
+    for (i = 0; i < W; ++i) {
+        for (j = 0; j < H; ++j) {
+            p.x = i; p.y = j;
+            canvas.ops->Set(&canvas, p, &c);
+        }
+    }
 
     // 设置起点颜色和终点颜色, 此处用HSV颜色空间模型表示
     c0.ops->SetHSVA(&c0, 180, 50,  75, 255);
