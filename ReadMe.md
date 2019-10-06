@@ -44,7 +44,7 @@
 
 - **`ColorLab/src/Bresenham.c`**
 
-  Bresenham实现([参考来源](https://github.com/miloyip/line))
+  Bresenham实现（[参考来源](https://github.com/miloyip/line)）
 
 - **`ColorLab/src/Color.c`**
 
