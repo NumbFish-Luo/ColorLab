@@ -2,10 +2,10 @@
 
 float LinearInterpolation(float begin, float end, float percent) { return begin + (end - begin) * (percent / 100); }
 
-void LinearInterpolation_HSVA(const Color* begin, const Color* end, float percent, Bool reverseH, Color* result) {
+void LinearInterpolation_HSVA(const Color* begin, const Color* end, float percent, char reverseH, Color* result) {
     float beginH = begin->ops->GetH(begin);
     float endH = end->ops->GetH(end);
-    if (reverseH == True) { beginH += 360; }
+    if (reverseH > 0) { beginH += 360; } else if (reverseH < 0) { beginH -= 360; }
     result->ops->SetHSVA(result,
         LinearInterpolation(beginH, endH, percent),
         LinearInterpolation(begin->ops->GetS(begin), end->ops->GetS(end), percent),

@@ -17,11 +17,11 @@ typedef struct {                                                                
     Point p0, p1;                                                               \
     const Color* c0;                                                            \
     const Color* c1;                                                            \
-    Bool reverseH;                                                              \
+    char reverseH;                                                              \
 } DrawLine(C, _Args);                                                           \
 /* func */                                                                      \
 void DrawLine(C, _Do) (Point p, DrawLine(C, _Args)* args);                      \
-void DrawLine(C) (C* canvas, Point p0, Point p1, const Color* c0, const Color* c1, Bool reverseH);
+void DrawLine(C) (C* canvas, Point p0, Point p1, const Color* c0, const Color* c1, char reverseH);
 #define DrawLine_DEF(C) _DrawLine_DEF(C)
 
 // IMPL
@@ -33,7 +33,7 @@ void DrawLine(C, _Do) (Point p, DrawLine(C, _Args)* args) {                     
     LinearInterpolation_HSVA(args->c0, args->c1, percent, args->reverseH, &c);  \
     args->canvas->ops->Set(args->canvas, p, &c);                                \
 }                                                                               \
-void DrawLine(C) (C* canvas, Point p0, Point p1, const Color* c0, const Color* c1, Bool reverseH) { \
+void DrawLine(C) (C* canvas, Point p0, Point p1, const Color* c0, const Color* c1, char reverseH) { \
     DrawLine(C, _Args) args;                                                    \
     args.canvas = canvas;                                                       \
     args.p0 = p0; args.p1 = p1;                                                 \
