@@ -4,7 +4,7 @@
 
 一个渐变色的个人研究项目，纯C语言实现（使用了[miloyip前辈写的svpng](https://github.com/miloyip/svpng)来绘制png图），原理为线性插值。主要目标是用来生成好看的像素画配色方案，效果如下图所示（放大32倍）
 
-![test.png](ColorLab/test.png)
+![test.png](test.png)
 
 ## 2. 头文件
 
